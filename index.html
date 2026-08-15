@@ -3,18 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الجنيد فارما</title>
+    <title>الجنيد فارما | للأدوية والمستلزمات الطبية</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .card h2 {
+            color: #0284c7;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #0284c7;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background-color: #0369a1;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
-
 <body>
-    <h1>مرحبًا بكم في موقع الجنيد فارما</h1>
 
-    <p>شركة الجنيد فارما - صنعاء، أمانة العاصمة، اليمن.</p>
+    <header>
+        <h1>الجنيد فارما</h1>
+        <p>للأدوية والمستلزمات الطبية — صنعاء، اليمن</p>
+    </header>
 
-    <h2>من نحن</h2>
-    <p>نقدم منتجات وخدمات صيدلانية موثوقة لخدمة المجتمع.</p>
+    <div class="container">
+        <div class="card">
+            <h2>من نحن</h2>
+            <p>نحن في **الجنيد فارما** نلتزم بتقديم أفضل الخدمات والمنتجات الصيدلانية والمستلزمات الطبية الموثوقة لخدمة المجتمع بأعلى معايير الجودة.</p>
+        </div>
 
-    <h2>تواصل معنا</h2>
-    <p>أضف رقم الهاتف والبريد الإلكتروني هنا.</p>
+        <div class="card">
+            <h2>خدماتنا ومنتجاتنا</h2>
+            <p>توفير وتوزيع الأدوية والمستلزمات الطبية والمستحضرات الصيدلانية لمختلف القطاعات الطبية والصيدليات.</p>
+        </div>
+
+        <div class="card">
+            <h2>تواصل معنا</h2>
+            <p>يسعدنا تواصلكم معنا للاستفسارات والطلبات:</p>
+            <div class="btn-container">
+                <a href="https://wa.me/967000000000" class="btn" target="_blank">تواصل عبر الواتساب</a>
+                <a href="mailto:info@aljunaidpharma.com" class="btn" style="background-color: #475569;">إرسال بريد إلكتروني</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© جميع الحقوق محفوظة لـ شركة الجنيد فارما</p>
+    </footer>
+
 </body>
 </html>
