@@ -1,140 +1,413 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- رمز إثبات الملكية الجديد لـ Google Search Console -->
-    <meta name="google-site-verification" content="3wsfHwbLE52WA7adAqxb7kB1Jy0Fhzbo7tODcaWLzPQ" />
-    
-    <title>الجنيد فارما | Aljunaid Pharma for Pharmaceuticals & Medical Supplies</title>
-    
-    <meta name="keywords" content="الجنيد فارما, Aljunaid Pharma, أدوية, مستلزمات طبية, صيدلة, اليمن, صنعاء">
-    <meta name="description" content="الجنيد فارما للأدوية والمستلزمات الطبية - الموقع الرسمي والتعريفي بالخدمات والرؤية والمنتجات الصيدلانية.">
-
-    <!-- Schema Markup لربط الهوية بمحرك البحث -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Pharmacy",
-      "name": "الجنيد فارما | Aljunaid Pharma",
-      "url": "https://aljunaidpharma.github.io/website/",
-      "sameAs": [
-        "https://github.com/aljunaidpharma"
-      ]
-    }
-    </script>
-
+    <title>الجنيد فارما | Aljunaid Pharma</title>
+    <!-- Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #0a58ca;
+            --dark-color: #212529;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --gray-text: #6c757d;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #f8fafc;
-            color: #334155;
+            font-family: 'Cairo', 'Poppins', sans-serif;
             line-height: 1.6;
-        }
-
-        header {
-            background: linear-gradient(135deg, #0284c7, #0369a1);
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .logo-img {
-            max-width: 180px;
-            height: auto;
-            margin-bottom: 15px;
-        }
-
-        main {
-            padding: 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .section-card {
-            background: white;
-            padding: 25px;
-            margin-bottom: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        .section-card h2 {
-            color: #0284c7;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 8px;
-        }
-
-        .values-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .values-list li {
-            margin-bottom: 12px;
-            padding-right: 15px;
-            border-right: 3px solid #0284c7;
-        }
-
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-grid a {
-            background: #f1f5f9;
-            color: #0284c7;
-            text-decoration: none;
-            padding: 12px;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: bold;
+            color: var(--dark-color);
+            background-color: var(--light-bg);
             transition: all 0.3s ease;
         }
 
-        .social-grid a:hover {
-            background: #0284c7;
-            color: white;
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .brand-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .lang-btn {
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            background: var(--secondary-color);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0d6efd 0%, #032857 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p.tagline {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 3px solid var(--light-bg);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-start-point: 4px solid var(--primary-color);
+        }
+
+        .card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.8rem;
+        }
+
+        .services-list {
+            list-style: none;
+        }
+
+        .services-list li {
+            padding: 0.8rem;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .services-list li:last-child {
+            border-bottom: none;
+        }
+
+        .services-list i {
+            color: var(--primary-color);
+        }
+
+        .contact-info p {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: var(--white);
+            background: var(--primary-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            background: var(--secondary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--dark-color);
+            color: var(--white);
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .section { padding: 1.5rem; }
         }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>الجنيد فارما للأدوية والمستلزمات الطبية</h1>
-        <p>Aljunaid Pharma for Pharmaceuticals & Medical Supplies</p>
+        <nav class="navbar">
+            <div class="brand-logo">
+                <i class="fa-solid fa-staff-snake"></i>
+                <span id="nav-brand">الجنيد فارما</span>
+            </div>
+            <button class="lang-btn" onclick="toggleLanguage()">
+                <i class="fa-solid fa-globe"></i>
+                <span id="lang-toggle-text">English</span>
+            </button>
+        </nav>
     </header>
 
-    <main>
-        <div class="section-card">
-            <h2>عن الشركة</h2>
-            <p>الجنيد فارما هي مؤسسة متخصصة في توفير وتقديم أجود المستلزمات الطبية والمنتجات الصيدلانية، وتسعى دائماً لتقديم خدمات متكاملة تضمن جودة الرعاية الصحية.</p>
-        </div>
+    <section class="hero">
+        <h1 id="hero-title">الجنيد فارما للأدوية والمستلزمات الطبية</h1>
+        <p class="tagline" id="hero-tagline">« نحـــــو أثـــــر يتجــاوز التجــــــــــارة »</p>
+    </section>
 
-        <div class="section-card">
-            <h2>قيمنا وخياراتنا</h2>
-            <ul class="values-list">
-                <li>الجودة والاعتمادية في كافة المستلزمات الطبية.</li>
-                <li>التطوير المستمر وخدمة المجتمع الصيدلاني والطبي.</li>
-                <li>الالتزام بالمعايير الصحية والمهنية.</li>
-            </ul>
-        </div>
+    <div class="container">
+        <!-- About Section -->
+        <section class="section">
+            <h2 class="section-title" id="about-title">عن الشركة</h2>
+            <p id="about-desc">
+                شركة الجنيد فارما للأدوية والمستلزمات الطبية هي شركة يمنية ناشئة، تأسست عام 2022م في العاصمة صنعاء بطموح واسع، ورؤية حديثة لتطوير منظومة الإمداد الطبي والدوائي.<br><br>
+                نعمل في "الجنيد فارما" على استيراد وتوفير الأدوية والمستلزمات والمعدات الطبية، ونحرص على اختيار منتجاتنا وفق أعلى معايير السلامة والجودة لتلبية احتياجات المستشفيات، المراكز الطبية، والصيدليات بما تستحقه.<br><br>
+                برغم حداثة انطلاقتنا، نعتمد على خطوات عمل منظمة وشبكة توزيع مرنة، ونسعى لبناء شراكات متينة وطويلة الأجل مع موردينا وعملائنا، متطلعين لأن نكون الشريك الموثوق والخيار الأفضل للرعاية الصحية في ربوع اليمن.
+            </p>
+        </section>
 
-        <div class="section-card">
-            <h2>تواصل معنا عبر المنصات الرسمية</h2>
-            <div class="social-grid">
-                <a href="https://github.com/aljunaidpharma" target="_blank">حساب GitHub الرسمي</a>
+        <!-- Vision & Mission -->
+        <section class="section">
+            <div class="grid-2">
+                <div class="card">
+                    <h3 id="vision-title"><i class="fa-solid fa-eye"></i> الرؤية</h3>
+                    <p id="vision-desc">أن نبني إرثًا صحيًا خالدًا يمتد عبر الأجيال، حيث تكون الصحة حقًا لا امتيازًا، ونحافظ على المسؤولية الموكلة إلينا في كل ما نقدمه وكل قرار نتخذه.</p>
+                </div>
+                <div class="card">
+                    <h3 id="mission-title"><i class="fa-solid fa-bullseye"></i> الرسالة</h3>
+                    <p id="mission-desc">مهمتنا تعزيز الرعاية الصحية من خلال تقديم حلول دوائية وطبية ومخبرية، وشراكات مسؤولة بتلبية الاحتياجات الطبية، انطلاقًا من اختيار الجودة التي يرغب بها العميل والمنتج الذي يستحقه.</p>
+                </div>
             </div>
-        </div>
-    </main>
+        </section>
+
+        <!-- Core Values -->
+        <section class="section">
+            <h2 class="section-title" id="values-title">قيمنا</h2>
+            <div class="grid-2" id="values-grid">
+                <!-- Populated by Javascript -->
+            </div>
+        </section>
+
+        <!-- Products & Services -->
+        <section class="section">
+            <h2 class="section-title" id="services-title">المنتجات والخدمات</h2>
+            <ul class="services-list" id="services-list">
+                <!-- Populated by Javascript -->
+            </ul>
+        </section>
+
+        <!-- Contact Us -->
+        <section class="section">
+            <h2 class="section-title" id="contact-title">التواصل معنا</h2>
+            <div class="contact-info">
+                <p><i class="fa-solid fa-location-dot"></i> <span id="address-text">الجمهورية اليمنية - صنعاء - شارع تعز (بعد جولة 45 أمام الجوبي للمفروشات)</span></p>
+                <p><i class="fa-solid fa-envelope"></i> aljunaidpharma@gmail.com | aljunaidpharma@yahoo.com</p>
+                <p><i class="fa-solid fa-phone"></i> +967 771133030 | +967 711366322</p>
+            </div>
+            <h3 style="margin-top: 1.5rem;" id="social-title">المنصات الاجتماعية</h3>
+            <div class="social-links">
+                <a href="https://m.facebook.com/aljunaidpharma" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/in/aljunaidpharma" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/aljunaidpharma" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@aljunaidpharma" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/@aljunaidpharm" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://x.com/aljunaidpharma" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p id="footer-text">&copy; 2022 - 2026 الجنيد فارما. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        const translations = {
+            ar: {
+                dir: "rtl",
+                font: "'Cairo', sans-serif",
+                langText: "English",
+                navBrand: "الجنيد فارما",
+                heroTitle: "الجنيد فارما للأدوية والمستلزمات الطبية",
+                heroTagline: "« نحـــــو أثـــــر يتجــاوز التجــــــــــارة »",
+                aboutTitle: "عن الشركة",
+                aboutDesc: `شركة الجنيد فارما للأدوية والمستلزمات الطبية هي شركة يمنية ناشئة، تأسست عام 2022م في العاصمة صنعاء بطموح واسع، ورؤية حديثة لتطوير منظومة الإمداد الطبي والدوائي.<br><br>نعمل في "الجنيد فارما" على استيراد وتوفير الأدوية والمستلزمات والمعدات الطبية، ونحرص على اختيار منتجاتنا وفق أعلى معايير السلامة والجودة لتلبية احتياجات المستشفيات، المراكز الطبية، والصيدليات بما تستحقه.<br><br>برغم حداثة انطلاقتنا، نعتمد على خطوات عمل منظمة وشبكة توزيع مرنة، ونسعى لبناء شراكات متينة وطويلة الأجل مع موردينا وعملائنا، متطلعين لأن نكون الشريك الموثوق والخيار الأفضل للرعاية الصحية في ربوع اليمن.`,
+                visionTitle: '<i class="fa-solid fa-eye"></i> الرؤية',
+                visionDesc: "أن نبني إرثًا صحيًا خالدًا يمتد عبر الأجيال، حيث تكون الصحة حقًا لا امتيازًا، ونحافظ على المسؤولية الموكلة إلينا في كل ما نقدمه وكل قرار نتخذه.",
+                missionTitle: '<i class="fa-solid fa-bullseye"></i> الرسالة',
+                missionDesc: "مهمتنا تعزيز الرعاية الصحية من خلال تقديم حلول دوائية وطبية ومخبرية، وشراكات مسؤولة بتلبية الاحتياجات الطبية، انطلاقًا من اختيار الجودة التي يرغب بها العميل والمنتج الذي يستحقه.",
+                valuesTitle: "قيمنا",
+                values: [
+                    { title: "الموثوقية", desc: "نُقدّم ما يُمكن الاعتماد عليه دون تردد." },
+                    { title: "الثقة", desc: "الثقة ليست مجرد قيمة، بل هي جوهر ما نُقدّمه في كل خدمة." },
+                    { title: "الإتقان", desc: "لا نترك الجودة للصدفة." },
+                    { title: "الاستمرارية", desc: "نبني علاقات تدوم أطول من الصفقات." },
+                    { title: "الطموح", desc: "لا نسعى لأن نكون الأكبر ... بل لأن نكون الأجدر." }
+                ],
+                servicesTitle: "المنتجات والخدمات",
+                services: [
+                    "الأدوية والمستحضرات الدوائية",
+                    "المستلزمات والمستهلكات الطبية",
+                    "الأجهزة والمعدات الطبية",
+                    "المحاليل المخبرية",
+                    "خدمات التوزيع والتوريد"
+                ],
+                contactTitle: "التواصل معنا",
+                addressText: "الجمهورية اليمنية - صنعاء - شارع تعز (بعد جولة 45 أمام الجوبي للمفروشات)",
+                socialTitle: "المنصات الاجتماعية",
+                footerText: "&copy; 2022 - 2026 الجنيد فارما. جميع الحقوق محفوظة."
+            },
+            en: {
+                dir: "ltr",
+                font: "'Poppins', sans-serif",
+                langText: "العربية",
+                navBrand: "Aljunaid Pharma",
+                heroTitle: "Aljunaid Pharma for Pharmaceuticals & Medical Supplies",
+                heroTagline: "“Towards an Impact Beyond Trade”",
+                aboutTitle: "About Us",
+                aboutDesc: `Aljunaid Pharma for Pharmaceuticals and Medical Supplies is an emerging Yemeni company, established in 2022 in the capital, Sana'a, with high ambitions and a modern vision to develop the medical and pharmaceutical supply chain.<br><br>At "Aljunaid Pharma," we import and supply medicines, medical consumables, and equipment. We ensure our products are selected according to the highest safety and quality standards to meet the needs of hospitals, medical centers, and pharmacies as they deserve.<br><br>Despite our recent launch, we rely on organized operational steps and a flexible distribution network. We strive to build strong, long-term partnerships with our suppliers and clients, aspiring to be the trusted partner and top choice for healthcare across Yemen.`,
+                visionTitle: '<i class="fa-solid fa-eye"></i> Vision',
+                visionDesc: "To build a lasting healthcare legacy across generations, where health is a right, not a privilege, while upholding the responsibility entrusted to us in everything we offer and every decision we make.",
+                missionTitle: '<i class="fa-solid fa-bullseye"></i> Mission',
+                missionDesc: "Our mission is to enhance healthcare by providing pharmaceutical, medical, and laboratory solutions, fostering responsible partnerships to meet medical needs through delivering the quality our clients desire and the products they deserve.",
+                valuesTitle: "Core Values",
+                values: [
+                    { title: "Reliability", desc: "We deliver what can be depended on without hesitation." },
+                    { title: "Trust", desc: "Trust is not just a value; it is the essence of every service we provide." },
+                    { title: "Excellence", desc: "We never leave quality to chance." },
+                    { title: "Continuity", desc: "We build relationships that last longer than transactions." },
+                    { title: "Ambition", desc: "We do not seek to be the biggest... but to be the most worthy." }
+                ],
+                servicesTitle: "Products & Services",
+                services: [
+                    "Pharmaceuticals & Medications",
+                    "Medical Supplies & Consumables",
+                    "Medical Equipment & Devices",
+                    "Laboratory Solutions & Reagents",
+                    "Supply & Distribution Services"
+                ],
+                contactTitle: "Contact Us",
+                addressText: "Republic of Yemen - Sana'a - Taiz Street (After 45 Roundabout, opposite Al-Joubi Furniture)",
+                socialTitle: "Social Media Platforms",
+                footerText: "&copy; 2022 - 2026 Aljunaid Pharma. All Rights Reserved."
+            }
+        };
+
+        let currentLang = 'ar';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            const langData = translations[currentLang];
+
+            // Update HTML attributes
+            document.documentElement.dir = langData.dir;
+            document.documentElement.lang = currentLang;
+            document.body.style.fontFamily = langData.font;
+
+            // Update Content
+            document.getElementById('lang-toggle-text').innerText = langData.langText;
+            document.getElementById('nav-brand').innerText = langData.navBrand;
+            document.getElementById('hero-title').innerText = langData.heroTitle;
+            document.getElementById('hero-tagline').innerText = langData.heroTagline;
+            document.getElementById('about-title').innerText = langData.aboutTitle;
+            document.getElementById('about-desc').innerHTML = langData.aboutDesc;
+            document.getElementById('vision-title').innerHTML = langData.visionTitle;
+            document.getElementById('vision-desc').innerText = langData.visionDesc;
+            document.getElementById('mission-title').innerHTML = langData.missionTitle;
+            document.getElementById('mission-desc').innerText = langData.missionDesc;
+            document.getElementById('values-title').innerText = langData.valuesTitle;
+            document.getElementById('services-title').innerText = langData.servicesTitle;
+            document.getElementById('contact-title').innerText = langData.contactTitle;
+            document.getElementById('address-text').innerText = langData.addressText;
+            document.getElementById('social-title').innerText = langData.socialTitle;
+            document.getElementById('footer-text').innerHTML = langData.footerText;
+
+            // Render Values
+            const valuesGrid = document.getElementById('values-grid');
+            valuesGrid.innerHTML = langData.values.map(val => `
+                <div class="card">
+                    <h3>${val.title}</h3>
+                    <p>${val.desc}</p>
+                </div>
+            `).join('');
+
+            // Render Services
+            const servicesList = document.getElementById('services-list');
+            servicesList.innerHTML = langData.services.map(ser => `
+                <li><i class="fa-solid fa-circle-check"></i> ${ser}</li>
+            `).join('');
+        }
+
+        // Initialize default language
+        window.onload = () => {
+            currentLang = 'en'; // trick to force trigger to AR on load
+            toggleLanguage();
+        };
+    </script>
 </body>
-    </html>
+</html>
